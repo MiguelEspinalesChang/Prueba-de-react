@@ -1,6 +1,7 @@
 //dependencias
 import React, { Component } from 'react';
 import PropTypes from 'prop-type';
+import {Link} from 'react-router-dom';
 
 
 //assets
@@ -26,7 +27,11 @@ class Header extends Component {
         <div>
         <h2>{title}</h2>
             <ul className="menu">
-                {items && items.map((item,key) => <li key={key}>{item.title}</li>)}
+                {
+                    items && items.map(
+                        (item,key) => <li key={key}><link to={item.url}>{item.title}</link></li>
+                    )
+                }
             </ul>
         </div>
       </div>
