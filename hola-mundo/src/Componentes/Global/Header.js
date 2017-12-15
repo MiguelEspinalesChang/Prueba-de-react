@@ -1,8 +1,9 @@
 //dependencias
 import React, { Component } from 'react';
 import PropTypes from 'prop-type';
-import {Link} from 'react-router-dom';
-
+import {
+  Link
+} from 'react-router-dom'
 
 //assets
 import logo from './imagenes/logo.svg';
@@ -11,10 +12,6 @@ import './Css/Header.css';
 
 class Header extends Component {
 
-  static props = {
-    title : PropTypes.toString.isRequired,
-    items : PropTypes.array
-  };
   render() {
 
       const {title,items}= this.props;
@@ -27,11 +24,7 @@ class Header extends Component {
         <div>
         <h2>{title}</h2>
             <ul className="menu">
-                {
-                    items && items.map(
-                        (item,key) => <li key={key}><link to={item.url}>{item.title}</link></li>
-                    )
-                }
+                {items && items.map((item,key) => <li key={key}><Link to={item.url}>{item.title}</Link></li>)}
             </ul>
         </div>
       </div>
